@@ -2,6 +2,10 @@
 
 一个跑在 Windows 桌面上的透明小精灵「**方方**」：**背景透明、正方形镂空**，边框是流动的彩色渐变（流彩），内部漂浮着颜文字风格的粉色线条微表情——温柔微笑、眨眼、开心、害羞，每 30 秒舒缓变化。
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.9%2B-3776ab.svg)](pet.py)
+[![Build](https://github.com/Summery-ice/FangFang/actions/workflows/build.yml/badge.svg)](https://github.com/Summery-ice/FangFang/actions)
+
 纯 Python + PyQt5 绘制，无任何图片资源依赖（表情与流彩环全部**运行时矢量生成**），可打包成单文件 exe。
 
 ![方方](screenshot.png)
