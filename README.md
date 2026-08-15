@@ -5,8 +5,15 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.9%2B-3776ab.svg)](pet.py)
 [![Build](https://github.com/Summery-ice/FangFang/actions/workflows/build.yml/badge.svg)](https://github.com/Summery-ice/FangFang/actions)
+[![Release](https://img.shields.io/github/v/release/Summery-ice/FangFang.svg)](https://github.com/Summery-ice/FangFang/releases)
 
 纯 Python + PyQt5 绘制，无任何图片资源依赖（表情与流彩环全部**运行时矢量生成**），可打包成单文件 exe。
+
+## 下载 exe（免编译）
+
+到 [Releases](https://github.com/Summery-ice/FangFang/releases) 下载 `FangFang.exe`：**单文件、免安装、无控制台黑窗，双击即用。**
+
+> 每次打 `v*` tag，GitHub Actions 会自动重新构建并发布新 Release。
 
 ![方方](screenshot.png)
 
