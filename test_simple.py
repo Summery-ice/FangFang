@@ -6,5 +6,6 @@ import sys
 
 print("Python 版本:", sys.version)
 print("工作目录:", __file__)
-print("\n✅ GitHub Actions Python 测试通过")
+print("")
+print("[OK] GitHub Actions Python 测试通过")
 sys.exit(0)
