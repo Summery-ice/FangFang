@@ -7,21 +7,18 @@ on:
   pull_request:
   workflow_dispatch:
 
-# 显式授权：允许把 exe 发布到 Releases
 permissions:
   contents: write
 
 jobs:
   test:
     runs-on: windows-latest
-    env:
-      QT_QPA_PLATFORM: offscreen
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: 最简单测试（验证 Python 环境）
+      - name: 验证 Python 环境
         run: python test_simple.py
 
   build:
@@ -35,13 +32,7 @@ jobs:
       - run: pip install -r requirements.txt pyinstaller
       - name: 打包单文件 exe
         shell: pwsh
-        run: |
-          pyinstaller --noconfirm --onefile --windowed --name FangFang ^
-            --icon assets/pet.ico ^
-            --add-data "assets/faces;assets/faces" ^
-            --add-data "assets/shadow.png;assets" ^
-            --add-data "assets/sprite_base.png;assets" ^
-            pet.py
+        run: pyinstaller --noconfirm --onefile --windowed --name FangFang --icon assets/pet.ico --add-data "assets/faces;assets/faces" --add-data "assets/shadow.png;assets" --add-data "assets/sprite_base.png;assets" pet.py
       - name: 上传构建产物
         uses: actions/upload-artifact@v4
         with:
@@ -60,8 +51,4 @@ jobs:
       - name: 发布 Release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          gh release create "${{ github.ref_name }}" \
-            FangFang.exe \
-            --title "FangFang ${{ github.ref_name }}" \
-            --notes "自动打包的 Windows 单文件 exe（无控制台黑窗，双击即用）"
+        run: gh release create ${{ github.ref_name }} FangFang.exe --title "FangFang ${{ github.ref_name }}" --notes "自动打包的 Windows 单文件 exe（无控制台黑窗，双击即用）"
