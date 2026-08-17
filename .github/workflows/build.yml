@@ -1,5 +1,9 @@
 name: Build & Test
 
+# 显式授权：才允许把 exe 发布到 Releases
+permissions:
+  contents: write
+
 on:
   push:
     branches: [main]
